@@ -117,6 +117,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+  console.log('inside noelist: ', jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -178,5 +179,7 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+console.log("test");
 
 

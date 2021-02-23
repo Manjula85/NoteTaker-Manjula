@@ -1,17 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const data = require('./db/db.json');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiNotes = require('./public/assets/js/index');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-//to get the Json
-app.use('/api', apiNotes);
+app.get('/api/notes', (req, res) => {
+    res.json(data);
+ });
 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
