@@ -56,7 +56,6 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    console.log(uuidv4());        //added
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
