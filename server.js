@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');  //added
 const express = require('express');
 const data = require('./db/db.json');
 const {v4: uuidv4} = require('uuid');
@@ -55,6 +56,7 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('*', (req, res) => {
+    console.log(uuidv4());        //added
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
