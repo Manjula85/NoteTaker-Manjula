@@ -91,10 +91,11 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  deleteNote(noteId).then((data) => {
-    setTimeout(function(){ }, 3000);
+  deleteNote(noteId).then(() => {
+    setTimeout(function(){  //added extra code
     getAndRenderNotes();
     renderActiveNote();
+    }, 1000);
   });
 };
 

@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');  //added
+const { v4: uuidv4 } = require('uuid'); 
 const express = require('express');
 const data = require('./db/db.json');
-const {v4: uuidv4} = require('uuid');
 const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants');
 
 const PORT = process.env.PORT || 3001;
