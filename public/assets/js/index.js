@@ -53,6 +53,8 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
+  console.log("getting the activeNote id:" + activeNote);
+
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
@@ -65,10 +67,12 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  console.log("Save was clicked");
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
   };
+  console.log("New note: "+ newNote);
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -87,7 +91,8 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  deleteNote(noteId).then(() => {
+  deleteNote(noteId).then((data) => {
+    setTimeout(function(){ }, 3000);
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -117,7 +122,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  console.log('inside noelist: ', jsonNotes);
+  console.log('inside notelist: ', jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -179,7 +184,3 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
-
-console.log("test");
-
-
