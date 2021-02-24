@@ -91,6 +91,8 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
+  //Added a time delay to compensate for the delayed respose
+  //to display the delete button execution.
   deleteNote(noteId).then(() => {
     setTimeout(function(){  //added extra code
     getAndRenderNotes();
