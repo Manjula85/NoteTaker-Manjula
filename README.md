@@ -13,13 +13,13 @@ To create a Notepad where one can store, edit and delete data. The project uses 
 ## Functionality
 
 ### initial
-![](images\initial.PNG)
+![](images/initial.PNG)
 
 ### Edit and Save button
-![](images\editAndSaveButton.PNG)
+![](images/editAndSaveButton.PNG)
 
 ### New data
-![](images\newData.PNG)
+![](images/newData.PNG)
 
 ## Relavent links
 Site URL: https://manjula85.github.io/NoteTaker-Manjula/
